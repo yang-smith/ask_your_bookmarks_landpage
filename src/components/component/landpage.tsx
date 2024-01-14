@@ -10,6 +10,7 @@ import { cookies } from 'next/headers';
 
 export function Landpage() {
   const [email, setEmail] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,17 +27,31 @@ export function Landpage() {
       const { data, error } = await client.from('waitlist').insert([newWaitlistEntry]);
       if (error) throw error;
       console.log('Success:', data);
+      setSubmitSuccess(true);
     } catch (error) {
       console.error('Error:', error);
+      setSubmitSuccess(false);
     }
   };
   return (
     <section className="w-full h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 flex flex-row items-center justify-center px-4 md:px-6">
-      <div className="flex-1 flex flex-col items-center justify-center space-y-4 text-center">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800">Next-Gen Browser Plugin</h1>
-        <p className="text-sm md:text-base lg:text-lg text-gray-600 max-w-[500px]">
-          Enhance your browsing with our new plugin. It's faster, secure, and customizable.
+      <div className="flex-1 flex items-center justify-center">
+      <img
+        alt="Promotional Image"
+        className="w-full h-auto max-w-md object-contain rounded-md"
+        src="/bookmarks.png"
+        style={{
+          aspectRatio: "600/600"
+        }}
+      />
+      </div>
+      <div className="flex-1 flex flex-col items-start justify-center space-y-4 text-left pl-10">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">ChatterMark</h1>
+        <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-[500px]">
+          No Bookmark Diving, Just Ask and Effortlessly Access<br />
+          Powered by AI. ChatterMark know what you want.<br />
         </p>
+        <p />
         <div className="w-full max-w-sm space-y-2 mt-6">
           <form className="flex space-x-2" onSubmit={handleSubmit}>
             <Input
@@ -46,25 +61,22 @@ export function Landpage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <Button className="bg-gray-800 text-white" type="submit">
-              Waitlist
+            <Button 
+             className="bg-gray-800 text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 transition duration-300 ease-in-out shadow-lg transform hover:scale-105"
+             type="submit">
+              Join the Waitlist
             </Button>
           </form>
-          <p className="text-xs text-gray-500">Get notified at launch.</p>
+          {!submitSuccess && (
+            <p className="text-xs text-gray-500">I won't send you any spam. I hate it, just like you do.</p>
+        )}
+          
+          {submitSuccess && (
+          <p className="text-green-500 mt-4">
+            √ You're on the waitlist! We'll be in touch soon.
+          </p>
+        )}
         </div>
-      </div>
-      <div className="flex-1 flex items-center justify-center">
-        <img
-          alt="Promotional Image"
-          className="w-full h-auto max-w-sm"
-          height="400"
-          src="/placeholder.svg"
-          style={{
-            aspectRatio: "400/400",
-            objectFit: "cover",
-          }}
-          width="400"
-        />
       </div>
     </section>
   )
