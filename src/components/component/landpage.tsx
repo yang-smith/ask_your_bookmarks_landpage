@@ -15,7 +15,9 @@ export function Landpage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(email)
-    
+    if(email == '')
+    return
+
     const privateKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     if (!privateKey) throw new Error(`Expected env var SUPABASE_SERVICE_ROLE_KEY`)
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -35,10 +37,13 @@ export function Landpage() {
   };
   return (
     <section className="w-full h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 flex flex-row items-center justify-center px-4 md:px-6">
+      <div className="absolute bottom-0 right-0 overflow-hidden z-0">
+            <img className="w-full h-auto origin-bottom-right transform scale-150 lg:w-auto lg:mx-auto lg:object-cover lg:scale-75" src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/background-pattern.png" alt="" />
+      </div>
       <div className="flex-1 flex items-center justify-center">
       <img
         alt="Promotional Image"
-        className="w-full h-auto max-w-md object-contain rounded-md"
+        className="w-full h-auto max-w-lx object-contain rounded-md"
         src="/bookmarks.png"
         style={{
           aspectRatio: "600/600"
@@ -52,10 +57,10 @@ export function Landpage() {
           Powered by AI. ChatterMark know what you want.<br />
         </p>
         <p />
-        <div className="w-full max-w-sm space-y-2 mt-6">
+        <div className="w-full max-w-2xl space-y-2 mt-6 z-10">
           <form className="flex space-x-2" onSubmit={handleSubmit}>
             <Input
-              className="max-w-lg flex-1 bg-gray-100 border-gray-200 text-gray-700"
+              className="md:w-auto  bg-gray-100 border-gray-200 text-gray-700"
               placeholder="Your email"
               type="email"
               value={email}
@@ -78,6 +83,8 @@ export function Landpage() {
         )}
         </div>
       </div>
+
     </section>
+    
   )
 }
