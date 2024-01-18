@@ -20,10 +20,10 @@ const baseSiteConfig = {
     authors: [
       {
         name: "weijunext",
-        url: "https://weijunext.com",
+        url: "",
       }
     ],
-    creator: '@weijunext',
+    creator: '@AutumnRiver',
     themeColor: '#fff',
       // 可以在这个网站生成所有平台的ico：https://realfavicongenerator.net/
     icons: {

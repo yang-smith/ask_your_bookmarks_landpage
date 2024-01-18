@@ -17,6 +17,8 @@ export function Landpage() {
             <div className="absolute bottom-0 right-0 overflow-hidden">
                 <img className="w-full h-auto origin-bottom-right transform scale-150 lg:w-auto lg:mx-auto lg:object-cover lg:scale-75" src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/background-pattern.png" alt="" />
             </div>
+            <img className="absolute left-2 top-2 w-5 h-5 text-[#FDB241]" src="bookmark-svgrepo-com.svg" alt="AI-Powered Bookmark Assistant" />
+            
 
             <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-y-4 lg:items-center lg:grid-cols-2 xl:grid-cols-2">
@@ -61,7 +63,7 @@ export function Landpage() {
                             </div>
 
                             <div className="flex items-center justify-center mt-3 lg:justify-start">
-                                <img className="flex-shrink-0 object-cover w-6 h-6 overflow-hidden rounded-full" src="" alt="" />
+                                {/* <img className="flex-shrink-0 object-cover w-6 h-6 overflow-hidden rounded-full" src="" alt="" /> */}
                                 <p className="ml-2 text-base font-bold text-gray-900 font-pj">AutumnRiver</p>
                             </div>
                         </div>
