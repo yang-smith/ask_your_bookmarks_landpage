@@ -73,12 +73,12 @@ export function Landpage() {
             </Button>
           </form>
           {!submitSuccess && (
-            <p className="text-xs text-gray-500">I won't send you any spam. I hate it, just like you do.</p>
+            <p className="text-xs text-gray-500">I won&apos;t send you any spam. I hate it, just like you do.</p>
         )}
           
           {submitSuccess && (
           <p className="text-green-500 mt-4">
-            √ You're on the waitlist! We'll be in touch soon.
+            √ You&apos;re on the waitlist! We&apos;ll be in touch soon.
           </p>
         )}
         </div>
