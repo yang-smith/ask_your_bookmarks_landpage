@@ -11,13 +11,14 @@ import { cookies } from 'next/headers';
 export function Landpage() {
   const [email, setEmail] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(email)
     if(email == '')
     return
-
+    
     const privateKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     if (!privateKey) throw new Error(`Expected env var SUPABASE_SERVICE_ROLE_KEY`)
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -25,6 +26,7 @@ export function Landpage() {
     const client = createClient(url, privateKey)
 
     try {
+      setIsSubmitting(true);
       const newWaitlistEntry = { email: email, signup_date: new Date().toISOString() };
       const { data, error } = await client.from('waitlist').insert([newWaitlistEntry]);
       if (error) throw error;
@@ -34,6 +36,7 @@ export function Landpage() {
       console.error('Error:', error);
       setSubmitSuccess(false);
     }
+    setIsSubmitting(false);
   };
   return (
     <section className="w-full h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 flex flex-row items-center justify-center px-4 md:px-6">

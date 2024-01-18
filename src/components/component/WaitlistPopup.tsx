@@ -11,6 +11,8 @@ import { cookies } from 'next/headers';
 export default function WaitlistPopup({onClose}) {
   const [email, setEmail] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(email)
@@ -22,6 +24,7 @@ export default function WaitlistPopup({onClose}) {
     const client = createClient(url, privateKey)
 
     try {
+      setIsSubmitting(true);
       const newWaitlistEntry = { email: email, signup_date: new Date().toISOString() };
       const { data, error } = await client.from('waitlist').insert([newWaitlistEntry]);
       if (error) throw error;
@@ -31,6 +34,7 @@ export default function WaitlistPopup({onClose}) {
       console.error('Error:', error);
       setSubmitSuccess(false);
     }
+    setIsSubmitting(false);
   };
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -64,8 +68,9 @@ export default function WaitlistPopup({onClose}) {
               className="w-full text-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg py-2 px-4 shadow-md hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-200"
               type="submit"
               onClick={handleSubmit}
+              disabled={isSubmitting}
             >
-              Join
+              {isSubmitting ? 'Joining...' : 'Join'}
             </Button>          
           </div>
           {!submitSuccess && (
