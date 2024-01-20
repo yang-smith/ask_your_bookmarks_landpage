@@ -17,8 +17,11 @@ export function Landpage() {
             <div className="absolute bottom-0 right-0 overflow-hidden">
                 <img className="w-full h-auto origin-bottom-right transform scale-150 lg:w-auto lg:mx-auto lg:object-cover lg:scale-75" src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/background-pattern.png" alt="" />
             </div>
-            <img className="absolute left-2 top-2 w-5 h-5 text-[#FDB241]" src="bookmark-svgrepo-com.svg" alt="AI-Powered Bookmark Assistant" />
-            
+            <div className="absolute left-2 top-2 flex">
+            <img className="mr-2 w-5 h-5 text-[#FDB241]" src="bookmark-svgrepo-com.svg" alt="AI-Powered Bookmark Assistant" />
+            <p className="text-s text-gray-500">BookmarkBot</p>
+            </div>
+
 
             <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-y-4 lg:items-center lg:grid-cols-2 xl:grid-cols-2">
@@ -26,7 +29,8 @@ export function Landpage() {
                         <h1 className="text-3xl font-bold leading-tight text-gray-900 sm:text-3xl sm:leading-tight lg:text-5xl lg:leading-tight font-pj">
                             Smart & Efficient Bookmark Assitant</h1>
                         <p className="mt-2 text-lg text-gray-600 sm:mt-6 font-inter">
-                            Revolutionize your browsing experience with our AI-Powered Bookmark Assistant. Engage in simple conversations to swiftly locate and access your bookmarks, turning your massive collection into a smart and efficient library. No more clutter, just your bookmarks at the tip of your tongue.
+                            Revolutionize your browsing experience with our AI-Powered Bookmark Assistant. Engage in simple conversations to swiftly locate and access your bookmarks, turning your massive collection into a smart and efficient library. <br />
+                            No more clutter, just your bookmarks at the tip of your tongue.
                         </p>
 
                         <a href="#" title="" onClick={handleWaitlistClick} className="inline-flex px-8 py-4 mt-8 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border border-transparent rounded sm:mt-10 font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" role="button">
