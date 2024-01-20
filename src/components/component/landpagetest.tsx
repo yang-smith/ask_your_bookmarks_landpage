@@ -4,12 +4,13 @@ import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { cookies } from 'next/headers';
 import WaitlistPopup from "./WaitlistPopup";
+import Twitter from '../svgs/twitter'
 
 export function Landpage() {
     const [showPopup, setShowPopup] = useState(false);
     const handleWaitlistClick = () => {
         setShowPopup(true);
-      };
+    };
 
 
     return (
@@ -17,9 +18,9 @@ export function Landpage() {
             <div className="absolute bottom-0 right-0 overflow-hidden">
                 <img className="w-full h-auto origin-bottom-right transform scale-150 lg:w-auto lg:mx-auto lg:object-cover lg:scale-75" src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/background-pattern.png" alt="" />
             </div>
-            <div className="absolute left-2 top-2 flex">
-            <img className="mr-2 w-5 h-5 text-[#FDB241]" src="bookmark-svgrepo-com.svg" alt="AI-Powered Bookmark Assistant" />
-            <p className="text-s text-gray-500">BookmarkBot</p>
+            <div className="absolute px-4 mx-4 top-4 flex">
+                <img className="mr-2 w-5 h-5 text-[#FDB241]" src="bookmark-svgrepo-com.svg" alt="AI-Powered Bookmark Assistant" />
+                <p className="text-s text-gray-500">BookmarkBot</p>
             </div>
 
 
@@ -28,7 +29,7 @@ export function Landpage() {
                     <div className="text-center xl:col-span-1 lg:text-left md:px-16 lg:px-0 xl:pr-20">
                         <h1 className="text-3xl font-bold leading-tight text-gray-900 sm:text-3xl sm:leading-tight lg:text-5xl lg:leading-tight font-pj">
                             Smart & Efficient Bookmark Assitant</h1>
-                        <p className="mt-2 text-lg text-gray-600 sm:mt-6 font-inter">
+                        <p className="mt-1 text-lg text-gray-600 sm:mt-4 font-inter">
                             Revolutionize your browsing experience with our AI-Powered Bookmark Assistant. Engage in simple conversations to swiftly locate and access your bookmarks, turning your massive collection into a smart and efficient library. <br />
                             No more clutter, just your bookmarks at the tip of your tongue.
                         </p>
@@ -67,8 +68,12 @@ export function Landpage() {
                             </div>
 
                             <div className="flex items-center justify-center mt-3 lg:justify-start">
-                                {/* <img className="flex-shrink-0 object-cover w-6 h-6 overflow-hidden rounded-full" src="" alt="" /> */}
-                                <p className="ml-2 text-base font-bold text-gray-900 font-pj">AutumnRiver</p>
+                            <a href="https://twitter.com/jordenAAA" target="_blank" rel="noopener noreferrer" className="w-6 h-6 mr-2">
+                            <Twitter className="w-full h-full" />
+                            </a>
+                                <a href="https://twitter.com/jordenAAA" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                                    <span className="ml-2 text-base font-bold text-gray-900 font-pj">AutumnRiver</span>
+                                </a>
                             </div>
                         </div>
                     </div>
