@@ -14,7 +14,11 @@ export default function Home() {
       <Head>
         <title>AI-Powered Bookmark Assistant</title>
         <meta name="description" content="Revolutionize your browsing experience with our AI-Powered Bookmark Assistant. Engage in simple conversations to swiftly locate and access your bookmarks, turning your massive collection into a smart and efficient library." />
-        <meta property="og:image" content="https://www.bookmarkbot.fun/twitter.png" />
+        {/* <meta property="og:image" content="https://www.bookmarkbot.fun/image.png" /> */}
+        <meta name="twitter:card" content="https://www.bookmarkbot.fun/twitter.png" />
+        <meta name="twitter:title" content="BookmarkBot" />
+        <meta name="twitter:description" content="AI-Powered Bookmark Assistant" />
+        <meta name="twitter:image" content="https://www.bookmarkbot.fun/twitter.png" />
       </Head>
     <Landpage />
     <Analytics />
