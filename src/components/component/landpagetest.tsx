@@ -83,13 +83,6 @@ export function Landpage() {
                     </div>
                 </div>
             </div>
-            <div className="mt-8 sm:mt-16">
-                {/* 其他内容 */}
-                <a href="/my-chrome-extension.zip" download className="inline-flex px-8 py-4 mt-8 text-lg font-bold text-white transition-all duration-200 bg-blue-500 hover:bg-blue-700 border border-transparent rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    下载插件
-                </a>
-                {/* 其他内容 */}
-            </div>
         </section>
 
     )
