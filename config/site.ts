@@ -2,7 +2,7 @@ const baseSiteConfig = {
   name: "AI-Powered Bookmark Assistant",
   description:
     "Revolutionize your browsing experience with our AI-Powered Bookmark Assistant. Engage in simple conversations to swiftly locate and access your bookmarks, turning your massive collection into a smart and efficient library. No more clutter, just your bookmarks at the tip of your tongue.",
-  url: "https://ai-bookmark-assistant.com", // Replace with your actual URL
+  url: "https://www.bookmarkbot.fun", // Replace with your actual URL
   keywords: [
     "AI Bookmark Assistant",
     "Bookmark Manager",
@@ -52,7 +52,7 @@ export const siteConfig = {
     card: "twitter.png",
     title: baseSiteConfig.name,
     description: baseSiteConfig.description,
-    images: [`${baseSiteConfig.url}/image.png`],
+    images: [`${baseSiteConfig.url}/twitter.png`],
     creator: baseSiteConfig.creator,
   },
 }

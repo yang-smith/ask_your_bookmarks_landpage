@@ -68,9 +68,9 @@ export function Landpage() {
                             </div>
 
                             <div className="flex items-center justify-center mt-3 lg:justify-start">
-                            <a href="https://twitter.com/jordenAAA" target="_blank" rel="noopener noreferrer" className="w-6 h-6 mr-2">
-                            <Twitter className="w-full h-full" />
-                            </a>
+                                <a href="https://twitter.com/jordenAAA" target="_blank" rel="noopener noreferrer" className="w-6 h-6 mr-2">
+                                    <Twitter className="w-full h-full" />
+                                </a>
                                 <a href="https://twitter.com/jordenAAA" target="_blank" rel="noopener noreferrer" className="flex items-center">
                                     <span className="ml-2 text-base font-bold text-gray-900 font-pj">AutumnRiver</span>
                                 </a>
@@ -82,6 +82,13 @@ export function Landpage() {
                         <img className="w-full mx-auto" src="/bookmarks.png" alt="" />
                     </div>
                 </div>
+            </div>
+            <div className="mt-8 sm:mt-16">
+                {/* 其他内容 */}
+                <a href="/my-chrome-extension.zip" download className="inline-flex px-8 py-4 mt-8 text-lg font-bold text-white transition-all duration-200 bg-blue-500 hover:bg-blue-700 border border-transparent rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    下载插件
+                </a>
+                {/* 其他内容 */}
             </div>
         </section>
 
