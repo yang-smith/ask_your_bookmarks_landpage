@@ -6,6 +6,8 @@ import {Landpage} from "@/components/component/landpagetest"
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 import { siteConfig } from "../../config/site";
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,11 +25,21 @@ export const metadata = {
 };
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const browserLanguage = navigator.language;
+    // 如果瀏覽器語言是中文（zh-CN或zh-TW），則跳轉到指定頁面
+    if (browserLanguage.startsWith('zh')) {
+      router.push('/cn'); // 替換'/zh-page'為您的目標頁面路徑
+    }
+  }, [router]);
+
   return (
     <div>
       <Head>
-        <title>AI-Powered Bookmark Assistant</title>
-        <meta name="description" content="Revolutionize your browsing experience with our AI-Powered Bookmark Assistant. Engage in simple conversations to swiftly locate and access your bookmarks, turning your massive collection into a smart and efficient library." />
+        <title>Sleek and Smart AI-Powered Bookmark Manager - BookmarkBot</title>
+        <meta name="description" content="BookmarkBot, powered by AI, makes organizing and searching your bookmarks easier than ever. Just describe what you remember, no matter how vague, and quickly find the web page you're looking for. Join us to make your bookmark collection smart and effortlessly organized." />
         {/* <meta property="og:image" content="https://www.bookmarkbot.fun/image.png" /> */}
         {/* <meta name="twitter:card" content="https://www.bookmarkbot.fun/twitter.png" />
         <meta name="twitter:title" content="BookmarkBot" />

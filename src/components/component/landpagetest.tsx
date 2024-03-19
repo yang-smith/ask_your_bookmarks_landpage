@@ -30,8 +30,7 @@ export function Landpage() {
                         <h1 className="text-3xl font-bold leading-tight text-gray-900 sm:text-3xl sm:leading-tight lg:text-5xl lg:leading-tight font-pj">
                             Smart & Efficient Bookmark Assitant</h1>
                         <p className="mt-1 text-lg text-gray-600 sm:mt-4 font-inter">
-                            Revolutionize your browsing experience with our AI-Powered Bookmark Assistant. Engage in simple conversations to swiftly locate and access your bookmarks, turning your massive collection into a smart and efficient library. <br />
-                            No more clutter, just your bookmarks at the tip of your tongue.
+                            Struggling with a cluttered Google Chrome bookmarks bar? Our plugin transforms the chaos into clarity. Forget sifting through hundreds of bookmarks; simply describe what you're looking for, however vaguely remembered, and let our AI do the rest. It adapts to your habits, prioritizing what matters most to you. Say goodbye to the mess and hello to a smarter, organized browsing experience.
                         </p>
 
                         <a href="#" title="" onClick={handleWaitlistClick} className="inline-flex px-8 py-4 mt-8 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border border-transparent rounded sm:mt-10 font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" role="button">
@@ -79,7 +78,11 @@ export function Landpage() {
                     </div>
                     {showPopup && <WaitlistPopup onClose={() => setShowPopup(false)} />}
                     <div className="xl:col-span-1">
-                        <img className="w-full mx-auto" src="/bookmarks.png" alt="" />
+                        {/* <img className="w-full mx-auto" src="/bookmarks.png" alt="" /> */}
+                        <video className="w-full mx-auto" controls autoPlay>
+                            <source src="/bookmarks.mp4" type="video/mp4" />
+                            您的瀏覽器不支持Video標籤。
+                        </video>
                     </div>
                 </div>
             </div>
